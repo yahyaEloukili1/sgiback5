@@ -65,12 +65,6 @@ public class BenificiaireController {
 	    List<Benificiaire> benificiaires = ficheRepository.findAll();
 	    Map<String, List<Benificiaire>> groupedByCin = benificiaires.stream()
 	            .collect(Collectors.groupingBy(b -> b.getCin().trim().toLowerCase()));
-
-
-
-
-
-
 	    return groupedByCin.values().stream()
 	        .filter(list -> list.size() > 1)
 	        .flatMap(List::stream)
@@ -99,11 +93,7 @@ public class BenificiaireController {
 	    reportService.exportReport2(format, "C:\\allProjects2.jrxml", response);
 	}
 
-	@GetMapping("/report/{format}/{id}")
-	public String generateOneReport(@PathVariable String format,@PathVariable("id") int id) throws JRException, IOException  {
-		return reportService.exportOneReport(format,"C:\\fiche.jrxml","\\oneFiche.pdf",id);
-	}
-	
+
 	@GetMapping(path="fiche/{id}",produces=org.springframework.http.MediaType.APPLICATION_PDF_VALUE)
 	public byte[] getPhoto(@PathVariable("id") int id) throws IOException {
 		//Affectation f = affectationRepository.findById(id).get();

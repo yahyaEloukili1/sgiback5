@@ -24,8 +24,10 @@ import org.springframework.util.ResourceUtils;
 
 import com.example.demo.dao.BenificiaireRepository;
 import com.example.demo.dao.BenificiaireRepository2;
+import com.example.demo.dao.EndroitRepository;
 import com.example.demo.entities.Benificiaire;
 import com.example.demo.entities.BenificiaireArchive;
+import com.example.demo.entities.Endroit;
 
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperCompileManager;
@@ -39,13 +41,15 @@ import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 public class ReportService {
 	
 	@Autowired
-	private BenificiaireRepository ficheRepository;
+	private EndroitRepository ficheRepository;
 	@Autowired
 	private BenificiaireRepository2 benificiaireRepository2;
 	@Autowired
+	private BenificiaireRepository benificiaireRepository;
+	@Autowired
 	private ResourceLoader resourceLoader;
 	public List<Benificiaire> getBenificiairesGroupedByCin() {
-	    List<Benificiaire> benificiaires = ficheRepository.findAll();
+	    List<Benificiaire> benificiaires = benificiaireRepository.findAll();
 	    Map<String, List<Benificiaire>> groupedByCin = benificiaires.stream()
 	        .collect(Collectors.groupingBy(Benificiaire::getCin));
 	    return groupedByCin.values().stream()
@@ -54,7 +58,7 @@ public class ReportService {
 	        .collect(Collectors.toList());
 	}
 	public void exportReport(String reportFormat, String fileInput, HttpServletResponse response) throws JRException, IOException {
-	    List<Benificiaire> projects = ficheRepository.findAll();
+	    List<Endroit> projects = ficheRepository.findAll();
 
 	    // Compile the JasperReport
 	    JasperReport jasperReport = JasperCompileManager.compileReport(new FileInputStream(fileInput));
@@ -105,26 +109,6 @@ public class ReportService {
 	    JasperExportManager.exportReportToPdfStream(jasperPrint, response.getOutputStream());
 	}
 
-	public String exportOneReport(String reportFormat,String fileInput,String fileOutput,int id) throws JRException, IOException {
-	List<Benificiaire> fiches = new ArrayList<Benificiaire>();
-	Benificiaire  fiche =  ficheRepository.findById(id).get();
-		fiches.add(fiche);
-		String path = "C:\\report";
-	//"C:\\allProjects.jrxml")
-		JasperReport jasperReport = JasperCompileManager.compileReport(new FileInputStream(fileInput));
-
-		JRBeanCollectionDataSource dataSource = new   JRBeanCollectionDataSource(fiches);
-		Map<String, Object> map = new HashMap<>();
-		map.put("CreatdBy", "Java techi");
-		JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, map,dataSource);
-	
-		 if(reportFormat.equalsIgnoreCase("pdf")){
-			// "\\allProjects.pdf"
-			JasperExportManager.exportReportToPdfFile(jasperPrint,path+fileOutput);
-		
-		}
-		return "";
-	}
 
 
 }
