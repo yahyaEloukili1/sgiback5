@@ -14,16 +14,18 @@
 	<queryString>
 		<![CDATA[]]>
 	</queryString>
-	<field name="id" class="java.lang.Integer"/>
-	<field name="nom" class="java.lang.String"/>
-	<field name="address" class="java.lang.String"/>
-	<field name="fiche" class="java.lang.String"/>
-	<field name="cin" class="java.lang.String"/>
+	<field name="designation" class="java.lang.String"/>
+	<field name="adress" class="java.lang.String"/>
+	<field name="contact" class="java.lang.String"/>
+	<field name="x" class="java.lang.Float"/>
 	<field name="annexeName" class="java.lang.String"/>
 	<field name="districtName" class="java.lang.String"/>
 	<field name="categorieName" class="java.lang.String"/>
+	<field name="superficie" class="java.lang.Integer"/>
+	<field name="y" class="java.lang.Float"/>
+	<field name="observations" class="java.lang.String"/>
 	<group name="Groupe1">
-		<groupExpression><![CDATA[$F{cin}]]></groupExpression>
+		<groupExpression><![CDATA[$F{x}]]></groupExpression>
 		<groupHeader>
 			<band height="21">
 				<rectangle>
@@ -32,7 +34,7 @@
 				<textField>
 					<reportElement x="7" y="0" width="1144" height="20" forecolor="#000000" backcolor="#91C992" uuid="79f69e7f-8339-4a83-94a9-13b16fc63c2e"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle"/>
-					<textFieldExpression><![CDATA[$F{cin}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{x}]]></textFieldExpression>
 				</textField>
 			</band>
 		</groupHeader>
@@ -94,7 +96,7 @@ Région de Laayoune]]></text>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="arial1" size="12" isBold="true"/>
 				</textElement>
-				<text><![CDATA[العنوان]]></text>
+				<text><![CDATA[الملاحضات]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="870" y="0" width="100" height="37" uuid="91cfe64a-69de-4279-8d26-c754099426cb"/>
@@ -108,7 +110,7 @@ Région de Laayoune]]></text>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="arial1" size="12" isBold="true"/>
 				</textElement>
-				<text><![CDATA[Cin]]></text>
+				<text><![CDATA[العنوان]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="780" y="0" width="90" height="37" uuid="923a4989-4e02-429f-aecc-0c3202bd1a6c"/>
@@ -122,7 +124,7 @@ Région de Laayoune]]></text>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="arial1" size="12" isBold="true"/>
 				</textElement>
-				<text><![CDATA[الإسم الكامل]]></text>
+				<text><![CDATA[الملحقة الإدارية]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="400" y="0" width="130" height="37" uuid="b8019220-d63f-4882-95ea-e0ca533c2a71"/>
@@ -136,7 +138,7 @@ Région de Laayoune]]></text>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="arial1" size="12" isBold="true"/>
 				</textElement>
-				<text><![CDATA[الملحقة الإدارية]]></text>
+				<text><![CDATA[الهاتف]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="230" y="0" width="170" height="37" uuid="47d314d9-bdd0-46b4-a0ea-ec20e8eeed3e"/>
@@ -150,7 +152,7 @@ Région de Laayoune]]></text>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="arial1" size="12" isBold="true"/>
 				</textElement>
-				<text><![CDATA[اللائحة]]></text>
+				<text><![CDATA[المساحة]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="530" y="0" width="130" height="37" uuid="cbb8f315-9dea-4fb5-aa5a-104d058b00d2"/>
@@ -164,7 +166,7 @@ Région de Laayoune]]></text>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="arial1" size="12" isBold="true"/>
 				</textElement>
-				<text><![CDATA[الادارة]]></text>
+				<text><![CDATA[الفئة]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="660" y="0" width="120" height="37" uuid="8ecb48b6-e1a4-48e3-9b8a-47627a8bf9a2"/>
@@ -178,7 +180,7 @@ Région de Laayoune]]></text>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="arial1" size="12" isBold="true"/>
 				</textElement>
-				<text><![CDATA[الفئة]]></text>
+				<text><![CDATA[الدائرة]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="970" y="0" width="181" height="37" uuid="d2c17fd9-7942-475e-8604-30879ca72d83"/>
@@ -192,7 +194,7 @@ Région de Laayoune]]></text>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="arial1" size="12" isBold="true"/>
 				</textElement>
-				<text><![CDATA[الرقم الترتيبي]]></text>
+				<text><![CDATA[اسم الموقع]]></text>
 			</staticText>
 		</band>
 	</columnHeader>
@@ -215,7 +217,7 @@ Région de Laayoune]]></text>
 					<font fontName="arial1" size="12"/>
 					<paragraph leftIndent="5" spacingBefore="5" spacingAfter="5"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{address}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{observations}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="StretchHeight">
 				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="230" y="0" width="170" height="30" isPrintWhenDetailOverflows="true" uuid="9c44226a-f08c-4972-90f5-376f98351a0d">
@@ -233,7 +235,7 @@ Région de Laayoune]]></text>
 					<font fontName="arial1" size="10"/>
 					<paragraph leftIndent="5" spacingBefore="5" spacingAfter="5"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{fiche}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{superficie}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="StretchHeight">
 				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="400" y="0" width="130" height="30" isPrintWhenDetailOverflows="true" uuid="c28a5c8d-95cf-46d9-b4e4-18725226677a">
@@ -269,7 +271,7 @@ Région de Laayoune]]></text>
 					<font fontName="arial1" size="12"/>
 					<paragraph leftIndent="5" spacingBefore="5" spacingAfter="5"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{districtName}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{categorieName}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="StretchHeight">
 				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="660" y="0" width="120" height="30" isPrintWhenDetailOverflows="true" uuid="7a8e18a8-3804-4bfe-8a8a-75f4dd60300c">
@@ -287,7 +289,7 @@ Région de Laayoune]]></text>
 					<font fontName="arial1" size="12"/>
 					<paragraph leftIndent="5" spacingBefore="5" spacingAfter="5"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{categorieName}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{districtName}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="StretchHeight">
 				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="780" y="0" width="90" height="30" isPrintWhenDetailOverflows="true" uuid="8c56e16c-ee7f-465c-8de7-69918246df0c">
@@ -305,7 +307,7 @@ Région de Laayoune]]></text>
 					<font fontName="arial1" size="12"/>
 					<paragraph leftIndent="5" spacingBefore="5" spacingAfter="5"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{nom}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{annexeName}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="StretchHeight">
 				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="870" y="0" width="100" height="30" isPrintWhenDetailOverflows="true" uuid="03c89f7e-8a48-458a-90b2-52ae3e456470">
@@ -323,7 +325,7 @@ Région de Laayoune]]></text>
 					<font fontName="arial1" size="12"/>
 					<paragraph leftIndent="5" spacingBefore="5" spacingAfter="55"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{cin}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{adress}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="StretchHeight">
 				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="970" y="0" width="181" height="30" isPrintWhenDetailOverflows="true" uuid="73e661f9-c7dd-4e1e-acd1-8eaaa595a7df">
@@ -341,7 +343,7 @@ Région de Laayoune]]></text>
 					<font fontName="arial1" size="12"/>
 					<paragraph leftIndent="5" spacingBefore="5" spacingAfter="5"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{designation}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
