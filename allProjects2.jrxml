@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.20.1.final using JasperReports Library version 6.20.1-7584acb244139816654f64e2fd57a00d3e31921e  -->
+<!-- Created with Jaspersoft Studio version 6.20.6.final using JasperReports Library version 6.20.6-5c96b6aa8a39ac1dc6b6bea4b81168e16dd39231  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="allProjects" pageWidth="1191" pageHeight="842" orientation="Landscape" columnWidth="1151" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="089518bf-e7ea-45bc-806e-df905cbe2b86">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
 	<property name="com.jaspersoft.studio.unit." value="pixel"/>
@@ -27,16 +27,7 @@
 	<group name="Groupe1">
 		<groupExpression><![CDATA[$F{x}]]></groupExpression>
 		<groupHeader>
-			<band height="21">
-				<rectangle>
-					<reportElement x="7" y="0" width="1144" height="20" forecolor="#ED4C4A" backcolor="#E3625F" uuid="16634b8c-0b9e-48ff-a1dc-72a27bc19de2"/>
-				</rectangle>
-				<textField>
-					<reportElement x="7" y="0" width="1144" height="20" forecolor="#000000" backcolor="#91C992" uuid="79f69e7f-8339-4a83-94a9-13b16fc63c2e"/>
-					<textElement textAlignment="Center" verticalAlignment="Middle"/>
-					<textFieldExpression><![CDATA[$F{x}]]></textFieldExpression>
-				</textField>
-			</band>
+			<band height="21"/>
 		</groupHeader>
 	</group>
 	<background>
@@ -75,7 +66,7 @@ Région de Laayoune]]></text>
 			</textField>
 			<image>
 				<reportElement x="40" y="10" width="60" height="57" uuid="372b9778-5798-4bb6-93be-79556cdec26d"/>
-				<imageExpression><![CDATA["C:/logo-removebg-preview (1).png"]]></imageExpression>
+				<imageExpression><![CDATA["C:/Users/yahya/OneDrive/Bureau/royaume-du-maroc-kingdom-of-morocco-logo.png"]]></imageExpression>
 			</image>
 		</band>
 	</title>
@@ -201,7 +192,7 @@ Région de Laayoune]]></text>
 	<detail>
 		<band height="30">
 			<textField textAdjust="StretchHeight">
-				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="7" y="0" width="223" height="30" isPrintWhenDetailOverflows="true" uuid="c676dab6-dcc9-43c3-9120-ce38333a2bee">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="7" y="-21" width="223" height="30" isPrintWhenDetailOverflows="true" uuid="c676dab6-dcc9-43c3-9120-ce38333a2bee">
 					<property name="com.jaspersoft.studio.unit.firstLineIndent" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 					<property name="com.jaspersoft.studio.unit.spacingBefore" value="px"/>
@@ -220,7 +211,7 @@ Région de Laayoune]]></text>
 				<textFieldExpression><![CDATA[$F{observations}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="StretchHeight">
-				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="230" y="0" width="170" height="30" isPrintWhenDetailOverflows="true" uuid="9c44226a-f08c-4972-90f5-376f98351a0d">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="230" y="-21" width="170" height="30" isPrintWhenDetailOverflows="true" uuid="9c44226a-f08c-4972-90f5-376f98351a0d">
 					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 					<property name="com.jaspersoft.studio.unit.spacingBefore" value="px"/>
 					<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
@@ -238,7 +229,7 @@ Région de Laayoune]]></text>
 				<textFieldExpression><![CDATA[$F{superficie}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="StretchHeight">
-				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="400" y="0" width="130" height="30" isPrintWhenDetailOverflows="true" uuid="c28a5c8d-95cf-46d9-b4e4-18725226677a">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="400" y="-21" width="130" height="30" isPrintWhenDetailOverflows="true" uuid="c28a5c8d-95cf-46d9-b4e4-18725226677a">
 					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 					<property name="com.jaspersoft.studio.unit.spacingBefore" value="px"/>
 					<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
@@ -256,7 +247,7 @@ Région de Laayoune]]></text>
 				<textFieldExpression><![CDATA[$F{annexeName}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="StretchHeight">
-				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="530" y="0" width="130" height="30" isPrintWhenDetailOverflows="true" uuid="fd777fde-bbd1-42f8-920c-6c1a716bf70b">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="530" y="-21" width="130" height="30" isPrintWhenDetailOverflows="true" uuid="fd777fde-bbd1-42f8-920c-6c1a716bf70b">
 					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 					<property name="com.jaspersoft.studio.unit.spacingBefore" value="px"/>
 					<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
@@ -274,7 +265,7 @@ Région de Laayoune]]></text>
 				<textFieldExpression><![CDATA[$F{categorieName}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="StretchHeight">
-				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="660" y="0" width="120" height="30" isPrintWhenDetailOverflows="true" uuid="7a8e18a8-3804-4bfe-8a8a-75f4dd60300c">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="660" y="-21" width="120" height="30" isPrintWhenDetailOverflows="true" uuid="7a8e18a8-3804-4bfe-8a8a-75f4dd60300c">
 					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 					<property name="com.jaspersoft.studio.unit.spacingBefore" value="px"/>
 					<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
@@ -292,7 +283,7 @@ Région de Laayoune]]></text>
 				<textFieldExpression><![CDATA[$F{districtName}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="StretchHeight">
-				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="780" y="0" width="90" height="30" isPrintWhenDetailOverflows="true" uuid="8c56e16c-ee7f-465c-8de7-69918246df0c">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="780" y="-21" width="90" height="30" isPrintWhenDetailOverflows="true" uuid="8c56e16c-ee7f-465c-8de7-69918246df0c">
 					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 					<property name="com.jaspersoft.studio.unit.spacingBefore" value="px"/>
 					<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
@@ -310,7 +301,7 @@ Région de Laayoune]]></text>
 				<textFieldExpression><![CDATA[$F{annexeName}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="StretchHeight">
-				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="870" y="0" width="100" height="30" isPrintWhenDetailOverflows="true" uuid="03c89f7e-8a48-458a-90b2-52ae3e456470">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="870" y="-21" width="100" height="30" isPrintWhenDetailOverflows="true" uuid="03c89f7e-8a48-458a-90b2-52ae3e456470">
 					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 					<property name="com.jaspersoft.studio.unit.spacingBefore" value="px"/>
 					<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
@@ -328,7 +319,7 @@ Région de Laayoune]]></text>
 				<textFieldExpression><![CDATA[$F{adress}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="StretchHeight">
-				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="970" y="0" width="181" height="30" isPrintWhenDetailOverflows="true" uuid="73e661f9-c7dd-4e1e-acd1-8eaaa595a7df">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="970" y="-21" width="181" height="30" isPrintWhenDetailOverflows="true" uuid="73e661f9-c7dd-4e1e-acd1-8eaaa595a7df">
 					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 					<property name="com.jaspersoft.studio.unit.spacingBefore" value="px"/>
 					<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>

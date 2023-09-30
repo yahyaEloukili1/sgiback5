@@ -27,6 +27,7 @@ import com.example.demo.dao.BenificiaireRepository;
 import com.example.demo.dao.BenificiaireRepository2;
 import com.example.demo.entities.Annexe;
 import com.example.demo.entities.Benificiaire;
+import com.example.demo.entities.Endroit;
 import com.example.demo.services.ReportService;
 
 import net.sf.jasperreports.engine.JRException;
@@ -82,6 +83,11 @@ public class BenificiaireController {
 	@GetMapping("/report/{format}")
 	public void generateReport(@PathVariable String format, HttpServletResponse response) throws JRException, IOException {
 	    reportService.exportReport(format, "C:\\allProjects.jrxml", response);
+	}
+
+	@PostMapping("/report4")
+	public void generateReport5(String format, @RequestBody List<Endroit> data, HttpServletResponse response) throws JRException, IOException {
+	    reportService.exportReport3("pdf", data, "C:\\allProjects.jrxml", response);
 	}
 	@GetMapping("/reportArchive/{format}")
 	public void generateReportArchive(@PathVariable String format, HttpServletResponse response) throws JRException, IOException {
