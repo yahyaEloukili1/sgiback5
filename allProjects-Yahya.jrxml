@@ -18,20 +18,13 @@
 	<field name="adress" class="java.lang.String"/>
 	<field name="contact" class="java.lang.String"/>
 	<field name="x" class="java.lang.Float"/>
-	<field name="annexe" class="com.example.demo.entities.Annexe">
-   <fieldDescription><![CDATA[annexe]]></fieldDescription>
-   </field>
-	
-		<field name="district" class="com.example.demo.entities.District">
-   <fieldDescription><![CDATA[district]]></fieldDescription>
-   </field>
-		<field name="categorie" class="com.example.demo.entities.Categorie">
-   <fieldDescription><![CDATA[categorie]]></fieldDescription>
-   </field>
+	<field name="annexeName" class="java.lang.String"/>
+	<field name="districtName" class="java.lang.String"/>
+	<field name="categorieName" class="java.lang.String"/>
 	<field name="superficie" class="java.lang.Integer"/>
 	<field name="y" class="java.lang.Float"/>
 	<field name="observations" class="java.lang.String"/>
-	<field name="reportTitle" class="java.lang.String"/>
+	<field name="ReportTitle" class="java.lang.String"/>
 	<group name="Groupe1">
 		<groupExpression><![CDATA[$F{x}]]></groupExpression>
 	</group>
@@ -43,6 +36,16 @@
 			<rectangle>
 				<reportElement x="0" y="0" width="1151" height="79" backcolor="#333F50" uuid="fa61408d-6d79-4a7c-8c0f-1d00d08f17dc"/>
 			</rectangle>
+			<staticText>
+				<reportElement x="375" y="27" width="435" height="30" forecolor="#FFFFFF" backcolor="#FFFFFF" uuid="46adb9cc-7ae7-47bd-8188-22704afae39d">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Liste des  Endroits- Région Laayoune Sakia Elhamra]]></text>
+			</staticText>
 			<staticText>
 				<reportElement x="140" y="17" width="140" height="50" forecolor="#FFFFFF" backcolor="#FFFFFF" uuid="bf4531be-34d6-40fd-8e08-9266230c9599"/>
 				<textElement textAlignment="Center">
@@ -64,11 +67,8 @@ Région de Laayoune]]></text>
 				<imageExpression><![CDATA["C:/Users/yahya/OneDrive/Bureau/royaume-du-maroc-kingdom-of-morocco-logo.png"]]></imageExpression>
 			</image>
 			<textField>
-				<reportElement x="530" y="23" width="440" height="31" forecolor="#FFFFFF" backcolor="#FFFFFF" uuid="eda67686-1c17-4735-934e-429cacfb8805"/>
-				<textElement>
-					<font fontName="arial1" size="18"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{reportTitle}]]></textFieldExpression>
+				<reportElement x="820" y="30" width="111" height="31" uuid="8a271b5e-51ad-46f8-b60c-bf3011a4013a"/>
+				<textFieldExpression><![CDATA[$F{ReportTitle}]]></textFieldExpression>
 			</textField>
 		</band>
 	</title>
@@ -292,7 +292,7 @@ Région de Laayoune]]></text>
 					<font fontName="arial1" size="12"/>
 					<paragraph leftIndent="5" spacingBefore="5" spacingAfter="5"/>
 				</textElement>
-				 <textFieldExpression><![CDATA[$F{categorie}.getDesignation()]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{categorieName}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="StretchHeight">
 				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="620" y="0" width="110" height="35" isPrintWhenDetailOverflows="true" uuid="7a8e18a8-3804-4bfe-8a8a-75f4dd60300c">
@@ -310,7 +310,7 @@ Région de Laayoune]]></text>
 					<font fontName="arial1" size="12"/>
 					<paragraph leftIndent="5" spacingBefore="5" spacingAfter="5"/>
 				</textElement>
-				 <textFieldExpression><![CDATA[$F{annexe}.getDesignation()]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{annexeName}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="StretchHeight">
 				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="730" y="0" width="90" height="35" isPrintWhenDetailOverflows="true" uuid="8c56e16c-ee7f-465c-8de7-69918246df0c">
@@ -328,7 +328,7 @@ Région de Laayoune]]></text>
 					<font fontName="arial1" size="12"/>
 					<paragraph leftIndent="5" spacingBefore="5" spacingAfter="5"/>
 				</textElement>
-				 <textFieldExpression><![CDATA[$F{district}.getDesignation()]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{districtName}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="StretchHeight">
 				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="820" y="0" width="210" height="35" isPrintWhenDetailOverflows="true" uuid="03c89f7e-8a48-458a-90b2-52ae3e456470">
@@ -419,6 +419,4 @@ Région de Laayoune]]></text>
 	<summary>
 		<band height="42" splitType="Stretch"/>
 	</summary>
-
-
 </jasperReport>

@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -27,7 +28,10 @@ import com.example.demo.dao.BenificiaireRepository;
 import com.example.demo.dao.BenificiaireRepository2;
 import com.example.demo.entities.Annexe;
 import com.example.demo.entities.Benificiaire;
+import com.example.demo.entities.Endroit;
 import com.example.demo.services.ReportService;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import net.sf.jasperreports.engine.JRException;
 
@@ -83,6 +87,14 @@ public class BenificiaireController {
 	public void generateReport(@PathVariable String format, HttpServletResponse response) throws JRException, IOException {
 	    reportService.exportReport(format, "C:\\allProjects.jrxml", response);
 	}
+	@PostMapping("/report4")
+	public void generateReport5(@RequestBody Map<String, String> request, HttpServletResponse response) throws JRException, IOException {
+	    String reportTitle = request.get("reportTitle");
+	    String dataJson = request.get("data");
+	    List<Endroit> data = new ObjectMapper().readValue(dataJson, new TypeReference<List<Endroit>>(){});
+	    reportService.exportReport3("pdf", data, "C:\\allProjects.jrxml", reportTitle, response);
+	}
+
 	@GetMapping("/reportArchive/{format}")
 	public void generateReportArchive(@PathVariable String format, HttpServletResponse response) throws JRException, IOException {
 	    reportService.exportReportArchive(format, "C:\\allProjects.jrxml", response);

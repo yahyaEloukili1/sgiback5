@@ -1,7 +1,10 @@
 package com.example.demo.entities;
 
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @Entity
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Endroit {
 
 	@Id
@@ -10,6 +13,15 @@ public class Endroit {
 	private String identifiant;
 	private String designation;
 	private String adress;
+	private String reportTitle;
+	public String getReportTitle() {
+		return reportTitle;
+	}
+
+	public void setReportTitle(String reportTitle) {
+		this.reportTitle = reportTitle;
+	}
+
 	@ManyToOne()
 	private Annexe annexe;
 	@ManyToOne()
