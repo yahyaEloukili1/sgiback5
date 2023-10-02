@@ -23,7 +23,10 @@ public interface EndroitRepository extends JpaRepository<Endroit, Integer> {
 
 	@Query("SELECT b.designation, b FROM Endroit b")
 	List<Object[]> findByDesignationGrouped();
-	List<Endroit> findByDesignationContainsIgnoreCase(String designation);
+	@Query("SELECT e FROM Endroit e WHERE LOWER(e.designation) LIKE %:designation%")
+	List<Endroit> findByDesignationContainsIgnoreCase(@Param("designation") String designation);
+
+	
 
 	List<Endroit> findByAnnexeId(Integer id);
 	List<Endroit> findByDistrictId(Integer id);

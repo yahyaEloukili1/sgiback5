@@ -70,12 +70,12 @@ public class CatalogueApplication implements CommandLineRunner {
 		restConfiguration.exposeIdsFor(UserRepository.class);
 		restConfiguration.exposeIdsFor(RoleRepository.class);
 	
-		if(accountService.finduserByUsrname("iftar")==null) {
-			accountService.save(new AppUser(null,"iftar","Laayoune2023@",null,null));
+		if(accountService.finduserByUsrname("sgi")==null) {
+			accountService.save(new AppUser(null,"sgi","Laayoune2023@",null,null));
 			accountService.saveRole(new AppRole(null,"ADMIN"));
 			accountService.saveRole(new AppRole(null,"USER"));
-			accountService.addRoleToUser("iftar","ADMIN");
-			accountService.addRoleToUser("iftar","USER");
+			accountService.addRoleToUser("sgi","ADMIN");
+			accountService.addRoleToUser("sgi","USER");
 		
 
 		}
