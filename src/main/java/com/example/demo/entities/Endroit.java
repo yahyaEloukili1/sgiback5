@@ -36,6 +36,7 @@ public class Endroit {
 	private float y;
 	@ManyToOne()
 	private Categorie categorie;
+	
 	public Endroit() {
 		super();
 		// TODO Auto-generated constructor stub

@@ -87,6 +87,7 @@ public class BenificiaireController {
 	public void generateReport(@PathVariable String format, HttpServletResponse response) throws JRException, IOException {
 	    reportService.exportReport(format, "C:\\allProjects.jrxml", response);
 	}
+<<<<<<< HEAD
 	@PostMapping("/report4")
 	public void generateReport5(@RequestBody Map<String, String> request, HttpServletResponse response) throws JRException, IOException {
 	    String reportTitle = request.get("reportTitle");
@@ -95,6 +96,13 @@ public class BenificiaireController {
 	    reportService.exportReport3("pdf", data, "C:\\allProjects.jrxml", reportTitle, response);
 	}
 
+=======
+
+	@PostMapping("/report4")
+	public void generateReport5(String format, @RequestBody List<Endroit> data, HttpServletResponse response) throws JRException, IOException {
+	    reportService.exportReport3("pdf", data, "C:\\allProjects.jrxml", response);
+	}
+>>>>>>> 28ef994cc3b7df07cab705e92001877a07350bf4
 	@GetMapping("/reportArchive/{format}")
 	public void generateReportArchive(@PathVariable String format, HttpServletResponse response) throws JRException, IOException {
 	    reportService.exportReportArchive(format, "C:\\allProjects.jrxml", response);

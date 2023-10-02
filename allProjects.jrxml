@@ -44,6 +44,19 @@
 				<reportElement x="0" y="0" width="1151" height="79" backcolor="#333F50" uuid="fa61408d-6d79-4a7c-8c0f-1d00d08f17dc"/>
 			</rectangle>
 			<staticText>
+<<<<<<< HEAD
+=======
+				<reportElement x="375" y="27" width="435" height="30" forecolor="#FFFFFF" backcolor="#FFFFFF" uuid="46adb9cc-7ae7-47bd-8188-22704afae39d">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Liste des  Endroits- Région Laayoune Sakia Elhamra]]></text>
+			</staticText>
+			<staticText>
+>>>>>>> 28ef994cc3b7df07cab705e92001877a07350bf4
 				<reportElement x="140" y="17" width="140" height="50" forecolor="#FFFFFF" backcolor="#FFFFFF" uuid="bf4531be-34d6-40fd-8e08-9266230c9599"/>
 				<textElement textAlignment="Center">
 					<font size="12" isBold="true"/>
@@ -296,6 +309,7 @@ Région de Laayoune]]></text>
 			</textField>
 			<textField textAdjust="StretchHeight">
 				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="620" y="0" width="110" height="35" isPrintWhenDetailOverflows="true" uuid="7a8e18a8-3804-4bfe-8a8a-75f4dd60300c">
+<<<<<<< HEAD
 					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 					<property name="com.jaspersoft.studio.unit.spacingBefore" value="px"/>
 					<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
@@ -314,6 +328,8 @@ Région de Laayoune]]></text>
 			</textField>
 			<textField textAdjust="StretchHeight">
 				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="730" y="0" width="90" height="35" isPrintWhenDetailOverflows="true" uuid="8c56e16c-ee7f-465c-8de7-69918246df0c">
+=======
+>>>>>>> 28ef994cc3b7df07cab705e92001877a07350bf4
 					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 					<property name="com.jaspersoft.studio.unit.spacingBefore" value="px"/>
 					<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
@@ -331,6 +347,27 @@ Région de Laayoune]]></text>
 				 <textFieldExpression><![CDATA[$F{district}.getDesignation()]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="StretchHeight">
+<<<<<<< HEAD
+=======
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="730" y="0" width="90" height="35" isPrintWhenDetailOverflows="true" uuid="8c56e16c-ee7f-465c-8de7-69918246df0c">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.spacingBefore" value="px"/>
+					<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="arial1" size="12"/>
+					<paragraph leftIndent="5" spacingBefore="5" spacingAfter="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{districtName}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+>>>>>>> 28ef994cc3b7df07cab705e92001877a07350bf4
 				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="820" y="0" width="210" height="35" isPrintWhenDetailOverflows="true" uuid="03c89f7e-8a48-458a-90b2-52ae3e456470">
 					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 					<property name="com.jaspersoft.studio.unit.spacingBefore" value="px"/>
