@@ -24,10 +24,9 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.example.demo.dao.AnnexeRepository;
-import com.example.demo.dao.BenificiaireRepository;
-import com.example.demo.dao.BenificiaireRepository2;
+
 import com.example.demo.entities.Annexe;
-import com.example.demo.entities.Benificiaire;
+
 import com.example.demo.entities.Endroit;
 import com.example.demo.services.ReportService;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -39,55 +38,18 @@ import net.sf.jasperreports.engine.JRException;
 @RestController
 public class BenificiaireController {
 
-	@Autowired
-	BenificiaireRepository ficheRepository;
-	@Autowired
-	BenificiaireRepository2 ficheRepository2;
+	
 
 	@Autowired
 	AnnexeRepository annexeRepository;
 	@Autowired
 	ReportService reportService;
-//	@GetMapping("/report/{format}")
-//	public String generateReport(@PathVariable String format) throws JRException, IOException  {
-//		return reportService.exportReport(format);
-//	}c
-	
-	
-	@GetMapping("/all")
-	public List<Benificiaire> getAllBenificiaires(){
-		return ficheRepository.findAll();
-	}
+
 	@GetMapping("/allAAL")
 	public List<Annexe> getAllAAL(){
 		return annexeRepository.findAll();
 	}
 
-	
-	@GetMapping("/doublons")
-	public List<Benificiaire> getBenificiairesGroupedByCin() {
-	    List<Benificiaire> benificiaires = ficheRepository.findAll();
-	    Map<String, List<Benificiaire>> groupedByCin = benificiaires.stream()
-	            .collect(Collectors.groupingBy(b -> b.getCin().trim().toLowerCase()));
-	    return groupedByCin.values().stream()
-	        .filter(list -> list.size() > 1)
-	        .flatMap(List::stream)
-	        .collect(Collectors.toList());
-	}
-
-	  @GetMapping("/benif2")
-	  public  List<Annexe> getBenificiairesGroupedByCin2() {
-	    List<Annexe> benificiaires = annexeRepository.findAll();
-	    return benificiaires;
-	  }
-	  
-	  
-	  
-	@GetMapping("/report/{format}")
-	public void generateReport(@PathVariable String format, HttpServletResponse response) throws JRException, IOException {
-	    reportService.exportReport(format, "C:\\allProjects.jrxml", response);
-	}
-<<<<<<< HEAD
 	@PostMapping("/report4")
 	public void generateReport5(@RequestBody Map<String, String> request, HttpServletResponse response) throws JRException, IOException {
 	    String reportTitle = request.get("reportTitle");
@@ -96,41 +58,10 @@ public class BenificiaireController {
 	    reportService.exportReport3("pdf", data, "C:\\allProjects.jrxml", reportTitle, response);
 	}
 
-=======
-
-	@PostMapping("/report4")
-	public void generateReport5(String format, @RequestBody List<Endroit> data, HttpServletResponse response) throws JRException, IOException {
-	    reportService.exportReport3("pdf", data, "C:\\allProjects.jrxml", response);
-	}
->>>>>>> 28ef994cc3b7df07cab705e92001877a07350bf4
-	@GetMapping("/reportArchive/{format}")
-	public void generateReportArchive(@PathVariable String format, HttpServletResponse response) throws JRException, IOException {
-	    reportService.exportReportArchive(format, "C:\\allProjects.jrxml", response);
-	}
-
-	@GetMapping("/report2/{format}")
-	public void generateReport2(@PathVariable String format, HttpServletResponse response) throws JRException, IOException {
-	    reportService.exportReport2(format, "C:\\allProjects2.jrxml", response);
-	}
 
 
-	@GetMapping(path="fiche/{id}",produces=org.springframework.http.MediaType.APPLICATION_PDF_VALUE)
-	public byte[] getPhoto(@PathVariable("id") int id) throws IOException {
-		//Affectation f = affectationRepository.findById(id).get();
-		//return Files.readAllBytes(Paths.get(System.getProperty("user.home")+"/Downloads/"+f.getFicheName()+".pdf"));
-	return Files.readAllBytes(Paths.get("C:\\report\\"+"dr"+".pdf"));
-	}
-	@GetMapping("/getLast")
-	public Benificiaire getLastFiche() {
-		List<Benificiaire> fiches = ficheRepository.findAll();
-		int j = 0;
-		Benificiaire fiche = null;
-	for(int i=0;i<fiches.size();i++) {
-		if(fiches.get(i).getId()>j) {
-			j = fiches.get(i).getId();
-			fiche = fiches.get(i);
-		}
-	}
-	return fiche;
-	}
+
+
+
+
 }

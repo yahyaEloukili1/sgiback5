@@ -8,10 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import org.springframework.web.bind.annotation.CrossOrigin;
-
-import com.example.demo.entities.BenificiaireArchive;
 import com.example.demo.entities.Endroit;
-import com.example.demo.projections.BenificiaireProjection2;
 import com.example.demo.projections.EndroitProjection;
 
 

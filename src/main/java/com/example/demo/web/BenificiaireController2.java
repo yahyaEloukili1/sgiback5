@@ -24,12 +24,10 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.example.demo.dao.AnnexeRepository;
-import com.example.demo.dao.BenificiaireRepository;
-import com.example.demo.dao.BenificiaireRepository2;
+
 import com.example.demo.dao.EndroitRepository;
 import com.example.demo.entities.Annexe;
-import com.example.demo.entities.Benificiaire;
-import com.example.demo.entities.BenificiaireArchive;
+
 import com.example.demo.entities.Endroit;
 import com.example.demo.services.ReportService;
 
@@ -39,8 +37,6 @@ import net.sf.jasperreports.engine.JRException;
 @RestController
 public class BenificiaireController2 {
 
-	@Autowired
-	BenificiaireRepository ficheRepository;
 	@Autowired
 	EndroitRepository endroitsrRepository;
 

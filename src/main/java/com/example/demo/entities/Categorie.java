@@ -15,8 +15,6 @@ public class Categorie {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String designation;
-	@OneToMany(mappedBy = "categorie")
-	private List<Benificiaire> benificiares;
 	public Categorie() {
 		super();
 		// TODO Auto-generated constructor stub
