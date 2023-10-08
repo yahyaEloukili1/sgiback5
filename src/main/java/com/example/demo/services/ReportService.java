@@ -45,13 +45,12 @@ public class ReportService {
 	private ResourceLoader resourceLoader;
 
 	public void exportReport3(String reportFormat,List<Endroit> data, String fileInput, String reportTitle, HttpServletResponse response) throws JRException, IOException {
-		   
 		for (Endroit endroit : data) {
 		    endroit.setReportTitle(reportTitle);	  
+		    break;
 		}
 	    // Compile the JasperReport
 	    JasperReport jasperReport = JasperCompileManager.compileReport(new FileInputStream(fileInput));
-
 	    // Set up the data source and report parameters
 	    JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(data);
 	    Map<String, Object> params = new HashMap<>();
@@ -62,27 +61,5 @@ public class ReportService {
 	    response.setHeader("Content-Disposition", "attachment; filename=\"report." + reportFormat + "\"");
 	    JasperExportManager.exportReportToPdfStream(jasperPrint, response.getOutputStream());
 	}
-
-	public void exportReport3(String reportFormat,List<Endroit> data, String fileInput, HttpServletResponse response) throws JRException, IOException {
-	    List<Endroit> projects = ficheRepository.findAll();
-
-	    // Compile the JasperReport
-	    JasperReport jasperReport = JasperCompileManager.compileReport(new FileInputStream(fileInput));
-
-	    // Set up the data source and report parameters
-	    JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(data);
-	    Map<String, Object> params = new HashMap<>();
-	    params.put("CreatedBy", "Java techi");
-
-	    // Fill the report and write it to the response output stream
-	    JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, params, dataSource);
-	    response.setContentType("application/" + reportFormat);
-	    response.setHeader("Content-Disposition", "attachment; filename=\"report." + reportFormat + "\"");
-	    JasperExportManager.exportReportToPdfStream(jasperPrint, response.getOutputStream());
-	}
-	
-
-
-
 
 }

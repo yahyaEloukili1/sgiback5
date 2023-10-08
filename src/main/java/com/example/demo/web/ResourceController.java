@@ -30,12 +30,14 @@ import com.example.demo.entities.Annexe;
 
 import com.example.demo.entities.Endroit;
 import com.example.demo.services.ReportService;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import net.sf.jasperreports.engine.JRException;
 
 @CrossOrigin("*")
 @RestController
-public class BenificiaireController2 {
+public class ResourceController {
 
 	@Autowired
 	EndroitRepository endroitsrRepository;
@@ -44,17 +46,24 @@ public class BenificiaireController2 {
 	AnnexeRepository annexeRepository;
 	@Autowired
 	ReportService reportService;
-//	@GetMapping("/report/{format}")
-//	public String generateReport(@PathVariable String format) throws JRException, IOException  {
-//		return reportService.exportReport(format);
-//	}c
-	
-	
 	@GetMapping("/endroits2")
 	public List<Endroit> getAllBenificiaires(){
 		return endroitsrRepository.findAll();
 	}
-	
+	@GetMapping("/allAAL")
+	public List<Annexe> getAllAAL(){
+		return annexeRepository.findAll();
+	}
+
+	@PostMapping("/report4")
+	public void generateReport5(@RequestBody Map<String, String> request, HttpServletResponse response) throws JRException, IOException {
+	    String reportTitle = request.get("reportTitle");
+	    String dataJson = request.get("data");
+	    List<Endroit> data = new ObjectMapper().readValue(dataJson, new TypeReference<List<Endroit>>(){});
+	    reportService.exportReport3("pdf", data, "C:\\allProjects.jrxml", reportTitle, response);
+	}
+
+
 
 
 
