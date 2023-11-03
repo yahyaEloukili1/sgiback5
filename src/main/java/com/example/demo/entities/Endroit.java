@@ -1,5 +1,7 @@
 package com.example.demo.entities;
 
+import java.util.List;
+
 import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -14,6 +16,8 @@ public class Endroit {
 	private String designation;
 	private String adress;
 	private String reportTitle;
+
+	
 	public String getReportTitle() {
 		return reportTitle;
 	}

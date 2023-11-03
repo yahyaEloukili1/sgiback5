@@ -65,17 +65,27 @@ public class SgiApplication implements CommandLineRunner {
 		restConfiguration.exposeIdsFor(UserRepository.class);
 		restConfiguration.exposeIdsFor(RoleRepository.class);
 	
-		if(accountService.finduserByUsrname("sgi")==null) {
+	if(accountService.finduserByUsrname("sgi")==null) {
 			accountService.save(new AppUser(null,"sgi","Laayoune2023@",null,null));
 			accountService.saveRole(new AppRole(null,"ADMIN"));
 			accountService.saveRole(new AppRole(null,"USER"));
 			accountService.addRoleToUser("sgi","ADMIN");
 			accountService.addRoleToUser("sgi","USER");
-		
-
+			for(int i=1;i<22;i++) {
+				accountService.save(new AppUser(null,"aal"+i,"Laayoune2023@",null,null));
+			    accountService.addRoleToUser("aal"+i,"ADMIN");
+			    accountService.addRoleToUser("aal"+i,"USER");
+			}
+			accountService.save(new AppUser(null,"boucraa","Laayoune2023@",null,null));
+			accountService.save(new AppUser(null,"Dcheira","Laayoune2023@",null,null));
+			accountService.save(new AppUser(null,"foumElOued","Laayoune2023@",null,null));
+			accountService.save(new AppUser(null,"aal1 almarsa","Laayoune2023@",null,null));
+			accountService.save(new AppUser(null,"aal2 almarsa","Laayoune2023@",null,null));
+	}
+	
 		}
 
 
-	}
+	
 
 }

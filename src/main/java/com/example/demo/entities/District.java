@@ -20,6 +20,7 @@ public class District {
 	@OneToMany(mappedBy = "district")
 	private List<Annexe> annexes;
 	
+	
 	public District() {
 		super();
 		// TODO Auto-generated constructor stub

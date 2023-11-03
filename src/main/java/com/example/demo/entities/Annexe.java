@@ -1,10 +1,13 @@
 package com.example.demo.entities;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Annexe {
@@ -15,6 +18,10 @@ public class Annexe {
 	private String designation;
 	@ManyToOne()
 	private District district;
+	@OneToMany(mappedBy = "annexe")
+	private List<Endroit> endroits;
+	@OneToMany(mappedBy = "annexe")
+	private List<AppUser> users;
 	public Annexe() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -43,6 +50,12 @@ public class Annexe {
 	}
 	public void setDistrict(District district) {
 		this.district = district;
+	}
+	public List<Endroit> getEndroits() {
+		return endroits;
+	}
+	public List<AppUser> getUsers() {
+		return users;
 	}
 	
 	

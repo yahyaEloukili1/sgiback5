@@ -10,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 
 
 
@@ -25,6 +26,8 @@ public class AppUser {
 	private String username;
 	private String password;
 	private String email;
+	@ManyToOne()
+	private Annexe annexe;
 	@ManyToMany(fetch = FetchType.EAGER)
 	private Collection<AppRole> roles = new ArrayList<>();
 	public AppUser(Long id, String username, String password, String email, Collection<AppRole> roles) {
@@ -68,6 +71,12 @@ public class AppUser {
 	}
 	public void setRoles(Collection<AppRole> roles) {
 		this.roles = roles;
+	}
+	public Annexe getAnnexe() {
+		return annexe;
+	}
+	public void setAnnexe(Annexe annexe) {
+		this.annexe = annexe;
 	}
 	
 	
