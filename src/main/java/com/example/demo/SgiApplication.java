@@ -1,5 +1,10 @@
 package com.example.demo;
 
+import java.awt.Font;
+import java.awt.FontFormatException;
+import java.awt.GraphicsEnvironment;
+import java.io.IOException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -40,6 +45,14 @@ public class SgiApplication implements CommandLineRunner {
 	@Autowired
 	@Lazy
 	private com.example.demo.services.AccountService accountService;
+	private static void loadFonts() {
+        try {
+            GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+            ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, SgiApplication.class.getResourceAsStream("/alfont_com_arial-1 (1).ttf")));
+        } catch (IOException | FontFormatException e) {
+            e.printStackTrace(); // Handle the exception appropriately in your application
+        }
+    }
 	@Bean
 	public BCryptPasswordEncoder getBPE() {
 		return new BCryptPasswordEncoder();
@@ -54,7 +67,7 @@ public class SgiApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-
+		loadFonts();
 		
 		restConfiguration.exposeIdsFor(Annexe.class);
 		restConfiguration.exposeIdsFor(District.class);
